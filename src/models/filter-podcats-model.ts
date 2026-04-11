@@ -4,3 +4,4 @@ export interface FilterPodcastsModel {
     statusCode: number;
     body: PodcastModel[];
 }
+    

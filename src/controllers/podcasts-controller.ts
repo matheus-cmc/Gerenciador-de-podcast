@@ -10,7 +10,7 @@ export const getListEpisodes = async (
   res: ServerResponse
 ) => {
 
-  const content = await serviceListEpisodes();
+  const content: FilterPodcastsModel = await serviceListEpisodes();
 
   res.writeHead(statusCodes.OK, { "Content-Type": "application/json" });
   res.end(JSON.stringify(content));
@@ -23,8 +23,6 @@ export const getFilterEpisodes = async (
 )=>{
 
  const content: FilterPodcastsModel = await servicesFilterEpisodes(req.url);
-
-   
 
    res.writeHead(content.statusCode, { "Content-Type": contentType.JSON });
    res.end(JSON.stringify(content.body));
